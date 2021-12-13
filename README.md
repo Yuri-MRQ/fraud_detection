@@ -4,9 +4,8 @@ This is a fraud detection system that use an ensemble model e a light API.
 
 First model:
 
-The encoder-decoder DNN has the input vector have the size (sample, 10) and the output (sample, 10), the loss used was
+The encoder-decoder DNN has the input vector of size (sample, 10) and the output (sample, 10), the loss used was
 MES (mean squared error), the encoded vector (ʋ) have shape (sample, 4).
-The architecture of the model have 03 Dense layers as hidden layer and follow this architecture:
 
 In this [file](data_science_challenge_dataset/encoder_decoder.ipynb)
 is the encoder-decoder model.
@@ -22,7 +21,7 @@ And in the final predict the Random Forest model has weight 02 the formula used 
 
 ![equation](http://www.sciweavers.org/tex2img.php?eq=%20%5Cfrac%7Brf%2A2%2Bencoder%7D%7B2%7D%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)
 
-For the API we used the FastAPI. On the localhost/predict we send a header with the values to predict
+For the API we used the FastAPI. On the localhost:800/predict we send a header with the values to predict
 the target, the features necessary to predict are:
 
 - device_id
@@ -54,4 +53,4 @@ uvicorn main:app --reload
 
 ## Testing
 
-Once the API is runing go to api_fraud_detection/test and run [test_api.ipynb](api_fraud_detection/test/test_api.ipynb)
+Once the API is runing go to root/api_fraud_detection/test and run [test_api.ipynb](api_fraud_detection/test/test_api.ipynb)
