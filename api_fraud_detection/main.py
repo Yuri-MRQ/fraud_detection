@@ -12,6 +12,10 @@ class Features(BaseModel):
 
 app = FastAPI()
 
+@app.get("/")
+def home():
+    return "Fraud Predict APi"
+
 @app.post("/predict/")
 async def create_item(features: Features):
     features_dict = features.dict()
