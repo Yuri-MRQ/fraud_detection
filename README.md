@@ -31,10 +31,6 @@ the targer, the features necessary to predict are:
 - cash_out_type_3	
 - cash_out_type_6
 
-
-## Requeriments
-
-
 ## 🛠 To run
 
 OS X & Linux:
@@ -47,10 +43,20 @@ cd api_fraud_detection
 uvicorn main:app --reload
 
 ```
-# Testing
 
 
-Go to api_fraud_detection/test and run [test_api.ipynb](api_fraud_detection/test/test_api.ipynb)
+## Requeriments
+
+Once inside the root folder just hit
+
+```
+pip install -r requeriment.txt
+
+```
+
+## Testing
+
+Once the API is on go to api_fraud_detection/test and run [test_api.ipynb](api_fraud_detection/test/test_api.ipynb)
 
 
 

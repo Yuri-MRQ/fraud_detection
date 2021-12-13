@@ -35,7 +35,7 @@ def split_data(X, Y, test_size=0.2, kfold=None, random_state=0):
         return indices_split, (X_test, Y_test)
     
     X_train, X_val, Y_train, Y_val = train_test_split(X_train,  Y_train, test_size = test_size,
-                                                      stratify=Y_train, random_state=RANDOM_STATE)
+                                                      stratify=Y_train, random_state=random_state)
     
     return (X_train, X_val, X_test), (Y_train, Y_val, Y_test)
 
