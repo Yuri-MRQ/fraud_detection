@@ -6,8 +6,6 @@ The encoder-decoder DNN has the input vetcor have the size (sample, 10) and the 
 MES (mean squared error), the encoded vector (ʋ) have shape (sample, 4).
 The architeture of the model have 03 Dense layers as hidden layer and follow this architeture:
 
-![alt text](source/nn.svg)
-
 In this [file](data_science_challenge_dataset/random_florest_model.ipynb)
 is the encoder-decoder model.
 
@@ -21,17 +19,17 @@ And, in the final predict the Random Forest model has weigth 02, the formula use
 For the API we used the FastAPI. On the localhost/predict we send a header with the values to predict
 the targer, the features necessary to predict are:
 
--device_id
--balance	
--processed_at	
--is_fraud	
--age_range	
--number_of_selfies_sent	
--time_client (is the processed_at minus the first entry of the account on the database)	
--cash_out_type_1	
--cash_out_type_2	
--cash_out_type_3	
-c-ash_out_type_6
+- device_id
+- balance	
+- processed_at	
+- is_fraud	
+- age_range	
+- number_of_selfies_sent	
+- time_client (is the processed_at minus the first entry of the account on the database)	
+- cash_out_type_1	
+- cash_out_type_2	
+- cash_out_type_3	
+- cash_out_type_6
 
 
 ## Requeriments
@@ -52,9 +50,7 @@ uvicorn main:app --reload
 # Testing
 
 
-Go to http://127.0.0.1:8000/docs
-
-There we can test our system
+Go to api_fraud_detection/test and run [test_api.ipynb](api_fraud_detection/test/test_api.ipynb)
 
 
 
