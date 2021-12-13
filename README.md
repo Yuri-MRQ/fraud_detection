@@ -26,7 +26,8 @@ the input values are:
 
 OS X & Linux:
 
-```git clone https://github.com/Yuri-MRQ/fraud_detection.git
+```
+git clone https://github.com/Yuri-MRQ/fraud_detection.git
 
 cd api_fraud_detection
 
