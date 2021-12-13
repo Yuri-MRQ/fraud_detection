@@ -11,7 +11,7 @@ In this [file](data_science_challenge_dataset/encoder_decoder.ipynb)
 is the encoder-decoder model.
 
 With the ʋ we predicts the target value using a Random Forest Classifier, the hypeparameters used
-are in this [file](data_science_challenge_dataset/rencoder-rf.ipynb)
+are in this [file](data_science_challenge_dataset/encoder-rf.ipynb)
 
 Second Model:
 
