@@ -25,7 +25,8 @@ def slice_data_for_models(df):
 
 def predict_vote(predict_encoded, predict_rf_only):
 
-    predict_concat = np.concatenate((predict_encoded,predict_rf_only*2), axis=0).T
+    predict_concat = np.concatenate((np.expand_dims(predict_encoded.T, axis=1),np.expand_dims(predict_rf_only.T, axis=1)*2), axis=1)
+
 
     predict = (predict_concat.sum(axis=1)/2).astype(int)
 

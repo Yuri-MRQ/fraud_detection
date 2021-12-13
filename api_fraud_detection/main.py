@@ -28,9 +28,9 @@ def home():
     return "Fraud Predict APi"
 
 @app.post("/predict/")
-async def create_item(features: Samples):
+async def create_item(sample: Samples):
 
-    features_dict = features.samples
+    features_dict = sample.samples
 
     predict = fraud_model.predict(features_dict)
 
