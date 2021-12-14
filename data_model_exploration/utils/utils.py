@@ -6,6 +6,8 @@ import seaborn as sns
 
 from sklearn.model_selection import train_test_split, StratifiedKFold
 
+from sklearn.ensemble import RandomForestClassifier
+
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import (roc_auc_score, f1_score, roc_curve, auc, 
                              confusion_matrix, precision_recall_curve)
@@ -223,14 +225,17 @@ def plot_cm(labels, predictions, model_name):
     plt.xlabel('Predicted label')
     plt.show()
 
-def train_model(model, X, Y, indices_split=None, scaling=False):
+def train_model(X, Y, model=None, indices_split=None, scaling=False, random_state=0):
     
-        
     if indices_split:
         i = 0
         classifiers = {}
         for train, val in indices_split.values():
-            
+            if model == None:
+                model = RandomForestClassifier(max_depth= 50, max_features= 'log2', min_samples_split= 2, 
+                                            n_estimators= 400, random_state=random_state, n_jobs= 3,
+                                            class_weight= "balanced_subsample", min_samples_leaf= 2, 
+                                            verbose=1, oob_score=True)
             if scaling:
                 scaler = MinMaxScaler()
                 X_train = scaler.fit_transform(X[train])
@@ -245,6 +250,12 @@ def train_model(model, X, Y, indices_split=None, scaling=False):
 
             i += 1
         return classifiers
+
+    if model == None:
+        model = RandomForestClassifier(max_depth= 50, max_features= 'log2', min_samples_split= 2, 
+                                    n_estimators= 400, random_state=random_state, n_jobs= 3,
+                                    class_weight= "balanced_subsample", min_samples_leaf= 2, 
+                                    verbose=1, oob_score=True)
     
     if scaling:
         scaler = MinMaxScaler()
